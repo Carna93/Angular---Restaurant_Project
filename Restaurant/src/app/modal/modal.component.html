@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col">
+        <h1>
+            {{restaurants?.name}}
+        </h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <p><u style="font-weight: bold;">Working Hours</u></p>
+        <nav>
+            <ul>
+                <li *ngIf="restaurants?.days[1]">
+                    Monday: {{restaurants?.days[1].opens}} - {{restaurants?.days[1].closes}}
+                </li>
+                <li *ngIf="restaurants?.days[2]">
+                    Tuesday: {{restaurants?.days[2].opens}} - {{restaurants?.days[2].closes}}
+                </li>
+                <li *ngIf="restaurants?.days[3]">
+                    Wednesday: {{restaurants?.days[3].opens}} - {{restaurants?.days[3].closes}}
+                </li>
+                <li *ngIf="restaurants?.days[4]">
+                    Thursday: {{restaurants?.days[4].opens}} - {{restaurants?.days[4].closes}}
+                </li>
+                <li *ngIf="restaurants?.days[5]">
+                    Friday: {{restaurants?.days[5].opens}} - {{restaurants?.days[5].closes}}
+                </li>
+                <li *ngIf="restaurants?.days[6]">
+                    Saturday: {{restaurants?.days[6].opens}} - {{restaurants?.days[6].closes}}
+                </li>
+                <li *ngIf="restaurants?.days[7]">
+                    Sunday: {{restaurants?.days[7].opens}} - {{restaurants?.days[7].closes}}
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="col-6">
+        <p><u style="font-weight: bold;">Address</u></p>
+        <p>{{restaurants?.location}}</p>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <table class="table table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of menu?.items">
+                    <td>{{item?.name}}</td>
+                    <td>{{item?.price}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
